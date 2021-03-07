@@ -1,0 +1,154 @@
+@import "./base/reset";
+@import "./base/variables";
+
+body {
+  background-color: $body-background-color;
+  font-family: $main-font-family;
+}
+
+.soial-wrapper {
+  display: flex;
+  margin-top: 5rem;
+  background-color: $sub-primary-color;
+}
+
+.logo {
+  background: $primary-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    width: 50px;
+    height: 50px;
+    background : {
+      image: url("../images/social.png");
+      repeat: no-repeat;
+    }
+  }
+
+  &__active {
+    position: absolute;
+    background-color: #1DA1F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    right: -100%;
+    transition: {
+      duration: $transition-duration;
+      property: right;
+      timing-function: linear;
+    }
+    &::before {
+      content: "";
+      width: 60px;
+      height: 60px;
+      background : {
+        image: url("../images/social-active.png");
+        repeat: no-repeat;
+      }
+    }
+  }
+}
+
+.social {
+  display: flex;
+  height: 300px;
+  &:hover > &__body {
+    width: 400px;
+  }
+  &:hover > &__logo {
+    .logo__active {
+      right: 0px;
+    }
+  }
+  &__logo {
+    height: 100%;
+    z-index: 1;
+  }
+  &__body {
+    background-color: $white-background-color;
+    height: 100%;
+    padding: 5rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 0px;
+    transition: {
+      duration: $transition-duration;
+      property: width;
+      timing-function: linear;
+    }
+    overflow: hidden;
+  }
+  &__header {
+    font-size: 2.5rem;
+    padding: 0 1.3rem;
+  }
+  &__description {
+    font-size: 1rem;
+    margin-top: 1rem;
+    width: 400px;
+    padding: 0 1.3rem;
+  }
+  &:nth-child(2) > &__logo::before {
+    background-position-x: -50px;
+  }
+  &:nth-child(2) > &__logo .logo__active::before {
+    background-position-x: -60px;
+  }
+  &:nth-child(2) > &__logo .logo__active{
+      background-color: #4267B2;
+  }
+  &:nth-child(3) > &__logo::before {
+    background-position-x: -100px;
+  }
+  &:nth-child(3) > &__logo .logo__active::before {
+    background-position-x: -120px;
+  }
+  &:nth-child(3) > &__logo .logo__active{
+      background-color: #2867B2;
+  }
+  &:nth-child(4) > &__logo::before {
+    background-position-x: -150px;
+  }
+  &:nth-child(4) > &__logo .logo__active::before {
+    background-position-x: -180px;
+  }
+  &:nth-child(4) > &__logo .logo__active{
+      background: linear-gradient( #405DE6, #833AB4,#FD1D1D ,#F77737, #FFDC80);
+  }
+  &:nth-child(5) > &__logo::before {
+    background-position-x: -200px;
+  }
+  &:nth-child(5) > &__logo .logo__active::before {
+    background-position-x: -240px;
+  }
+  &:nth-child(5) > &__logo .logo__active{
+      background-color: #FF0000;
+  }
+  &:nth-child(6) > &__logo::before {
+    background-position-x: -250px;
+  }
+  &:nth-child(6) > &__logo .logo__active::before {
+    background-position-x: -300px;
+  }
+  &:nth-child(6) > &__logo .logo__active{
+      background-color: #34526f;
+  }
+  &:nth-child(7) > &__logo::before {
+    background-position-x: -301px;
+  }
+  &:nth-child(7) > &__logo .logo__active::before {
+    background-position-x: -362px;
+  }
+  &:nth-child(7) > &__logo .logo__active{
+    background-color: #ea4c89;
+}
+}
